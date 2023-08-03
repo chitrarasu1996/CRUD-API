@@ -22,7 +22,7 @@ lastName:""
       <Routes>
    <Route path="/" element={<Home/>} /> 
     <Route path="/post" element={<Post/>}/>
-    <Route path="/edit" element={<Edit/>}/>
+    <Route path="/edit-user" element={<Edit/>}/>
     </Routes>
     </userContext.Provider>
     </div>
