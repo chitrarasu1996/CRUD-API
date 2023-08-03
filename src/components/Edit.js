@@ -6,17 +6,20 @@ import { API } from '../service/API'
 import { useNavigate } from 'react-router-dom'
 import { userContext } from '../App'
 const Edit = () => {
-const navigate=useNavigate()
+
    const {name,setName}=useContext(userContext)
+   const navigate=useNavigate()
 useEffect(()=>{
     const data=JSON.parse(localStorage.getItem("names"))
+
     if(!data){
         navigate("/")
+     return   
     }
 
-    setName({...name,firstName:data.firstName,lastName:data.lastName,userId:data.id})
+  return   setName({...name,firstName:data.firstName,lastName:data.lastName,userId:data.id})
 
-},[])
+},[setName])
   
 const createUser=async(e)=>{
 e.preventDefault()
