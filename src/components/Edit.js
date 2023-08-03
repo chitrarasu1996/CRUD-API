@@ -8,7 +8,15 @@ import { userContext } from '../App'
 const Edit = () => {
 const navigate=useNavigate()
    const {name,setName}=useContext(userContext)
+useEffect(()=>{
+    const data=JSON.parse(localStorage.getItem("names"))
+    if(!data){
+        navigate("/")
+    }
 
+    setName({...name,firstName:data.firstName,lastName:data.lastName,userId:data.id})
+
+},[])
   
 const createUser=async(e)=>{
 e.preventDefault()
