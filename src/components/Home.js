@@ -34,7 +34,7 @@ function Home() {
          firstName:user.firstName,
          lastName:user.lastName
     })
-      navigate("/edit")
+      navigate("/edit-user")
     
     }
   return (
